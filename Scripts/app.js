@@ -7,6 +7,7 @@ let Btn1 = document.getElementById("Btn1")
 
 Btn1.addEventListener("click", function(){
   AsyncGetData1(cityInput.value)
+  
 })
 
 
@@ -61,8 +62,8 @@ async function AsyncGetData3(latitude, longitude){
   currentmin = weatherApi3.main.temp_min
 
   temp.innerText = currentweather
-  max.innerText = currentmax
-  min.innerText = currentmin  
+  max.innerText = "Max " + currentmax
+  min.innerText = "Min " + currentmin  
 
   // AsyncGetData(initiallocation)
 }
@@ -83,7 +84,5 @@ async function AsyncGetData1(city){
   const promise = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=8e02b0db85b4a729b31b20a4e496b448&units=imperial`)
   const data = await promise.json();
   forecastApi = data
-  console.log(forecastApi)
-
-  
+  console.log(forecastApi)  
 }
