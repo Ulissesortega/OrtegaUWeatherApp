@@ -20,29 +20,46 @@ let currentcity = document.getElementById("currentcity")
 let mondaytemp = document.getElementById("tempmonday")
 let mondaymax = document.getElementById("maxmonday")
 let mondaymin = document.getElementById("minmonday")
+// Text Format
+mondaytemp.className = "temp"
+mondaymax.className = "max"
+mondaymin.className = "min"
 
 //Tuesday
 let temptuesday = document.getElementById("temptuesday")
 let maxtuesday = document.getElementById("maxtuesday")
 let mintuesday = document.getElementById("mintuesday")
+// Text Format
+temptuesday.className = "temp"
+maxtuesday.className = "max"
+mintuesday.className = "min"
 
 //Wednesday
-
 let tempwednesday = document.getElementById("tempwednesday")
 let maxwednesday = document.getElementById("maxwednesday")
 let minwednesday = document.getElementById("minwednesday")
+// Text Format
+tempwednesday.className = "temp"
+maxwednesday.className = "max"
+minwednesday.className = "min"
 
 //Thursday
-
 let tempthursday = document.getElementById("tempthursday")
 let maxthursday = document.getElementById("maxthursday")
 let minthursday = document.getElementById("minthursday")
+// Text Format
+tempthursday.className = "temp"
+maxthursday.className = "max"
+minthursday.className = "min"
 
 //Friday
-
 let tempfriday = document.getElementById("tempfriday")
 let maxfriday = document.getElementById("maxfriday")
 let minfriday = document.getElementById("minfriday")
+// Text Format
+tempfriday.className = "temp"
+maxfriday.className = "max"
+minfriday.className = "min"
 
 
 
@@ -199,10 +216,7 @@ async function AsyncGetData4(latitude, longitude){
 async function AsyncGetData(currentcityname){
   const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currentcityname}&appid=8e02b0db85b4a729b31b20a4e496b448&units=imperial`)
   const data = await promise.json();
-  weatherApi = data
-  console.log(weatherApi);
-  
-  
+  weatherApi = data  
 }
 
 
@@ -211,8 +225,7 @@ async function AsyncGetData(currentcityname){
 async function AsyncGetData1(city){
   const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8e02b0db85b4a729b31b20a4e496b448&units=imperial`)
   const data = await promise.json();
-  forecastApi = data
-  console.log(forecastApi);
+  forecastApi = data  
 }
 
 //City Forecast Weather from the textbox
@@ -221,7 +234,7 @@ async function AsyncGetData5(city){
   const promise = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=8e02b0db85b4a729b31b20a4e496b448&units=imperial`)
   const data = await promise.json();
   forecastApi8 = data
-  console.log(forecastApi8);
+  
 
 
 mondayweather = forecastApi8.list[8].main.temp

@@ -27,10 +27,31 @@ body{
 
 .test{
     background-color: white;
-    border-radius: 15px;
+    border-radius: 30px;
     box-sizing: border-box;
-    width: 100px;
+    width: 300px;
+    color: blue
 }
 
+.temp{
+    color: blue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.max{
+    color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.min{
+    color: green;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bordercard{
+    box-sizing: border-box;
+    border-style: double;
+    border-color: #4744CF;
+    border-width: 10px;
+    
+}
