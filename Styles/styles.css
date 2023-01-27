@@ -33,6 +33,18 @@ body{
     color: blue
 }
 
+.test1{
+    background-color: white;
+    border-radius: 30px;    
+    width: 25%;
+    color: blue;
+    box-sizing: border-box;
+    border-style: double;
+    border-color: #4744CF;
+    border-width: 10px;
+
+}
+
 .temp{
     color: blue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -52,6 +64,15 @@ body{
     box-sizing: border-box;
     border-style: double;
     border-color: #4744CF;
-    border-width: 10px;
+    border-width: 10px;    
+}
+
+.borderinput{
+    border-radius: 15px;
+    height: 115%;
+}
+
+.borderbtn{
+    border-radius: 15px;
     
 }
