@@ -9,7 +9,6 @@ if(prod.isLive == true)
     apiKey += dev.apiKey;
 }
 
-console.log(apiKey);
 // html IDs ========================================================================
 
 let cityInput = document.getElementById("cityInput")
@@ -62,23 +61,14 @@ tempfriday.className = "temp"
 maxfriday.className = "max"
 minfriday.className = "min"
 
-
-
-
-
 Btn1.addEventListener("click", function(){
   AsyncGetData1(cityInput.value)
   AsyncGetData5(cityInput.value)
 })
 
-
-
-
 const date = new Date();
 let dategoeshere = document.getElementById("dategoeshere")
 dategoeshere.innerText = date
-
-
 
 let API_KEY = '8e02b0db85b4a729b31b20a4e496b448';
 let weatherApi;
@@ -88,7 +78,6 @@ let weatherApi3;
 let weatherApi4;
 let forecastApi4;
 let forecastApi8;
-
 let latitude;
 let longitude;
 let initiallocation;
@@ -97,7 +86,6 @@ let currentmax;
 let currentmin;
 let currentcityname;
 let citynamebtn;
-
 
 // User Geo Location==============================================================================================
 const successCallback = (position) => {
@@ -126,13 +114,8 @@ async function AsyncGetData3(latitude, longitude){
   currentweather = weatherApi3.main.feels_like
   currentmax = weatherApi3.main.temp_max
   currentmin = weatherApi3.main.temp_min
-  currentcityname = weatherApi3.name
-
-  
-  
-  
-  currentcity.innerText = currentcityname
-  
+  currentcityname = weatherApi3.name  
+  currentcity.innerText = currentcityname  
 }
 
 // Initial City Forecast ===================================================================
@@ -142,23 +125,21 @@ async function AsyncGetData4(latitude, longitude){
   weatherApi4 = data
   console.log(weatherApi4);
   
-  //Monday
-  
-  
+  //Monday  
   //info sent to html
   tempmonday.innerText = "Temp " + weatherApi4.list[8].main.temp + " " + "°F"
   maxmonday.innerText = "Max Temp " + weatherApi4.list[8].main.temp_max + " " + "°F"
   minmonday.innerText = "Min Temp " + weatherApi4.list[8].main.temp_min + " " + "°F"
 
-  
+  //Tuesday
   //info sent to html
   temptuesday.innerText = "Temp " +weatherApi4.list[16].main.temp + " " + "°F"
   maxtuesday.innerText = "Max Temp " + weatherApi4.list[16].main.temp_max + " " + "°F"
   mintuesday.innerText = "Min Temp " + weatherApi4.list[16].main.temp_min + " " + "°F"
   
   
-  // wednesday list
-    //info sent to html
+  //Wednesday list
+  //info sent to html
   tempwednesday.innerText = "Temp " +weatherApi4.list[24].main.temp + " " + "°F"
   maxwednesday.innerText = "Max Temp " + weatherApi4.list[24].main.temp_max + " " + "°F"
   minwednesday.innerText = "Min Temp " + weatherApi4.list[24].main.temp_min + " " + "°F"
@@ -170,29 +151,20 @@ async function AsyncGetData4(latitude, longitude){
   maxthursday.innerText = "Max Temp " + weatherApi4.list[32].main.temp_max + " " + "°F"
   minthursday.innerText = "Min Temp " + weatherApi4.list[32].main.temp_min + " " + "°F"
 
-
     
   // Friday  
   //info sent to html
   tempfriday.innerText = "Temp " +weatherApi4.list[0].main.temp + " " + "°F"
   maxfriday.innerText = "Max Temp " + weatherApi4.list[0].main.temp_max + " " + "°F"
   minfriday.innerText = "Min Temp " + weatherApi4.list[0].main.temp_min + " " + "°F"
-  
-  
-
 }
 
-
-
-
 // ==============================================================================================================
-
 async function AsyncGetData(currentcityname){
   const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currentcityname}&appid=8e02b0db85b4a729b31b20a4e496b448&units=imperial`)
   const data = await promise.json();
   weatherApi = data  
 }
-
 
 //City Today Weather from the textbox
 
@@ -209,34 +181,19 @@ async function AsyncGetData5(city){
   const data = await promise.json();
   forecastApi8 = data
   
-
-
-// mondayweather = forecastApi8.list[8].main.temp
-// mondaydaymax = forecastApi8.list[8].main.temp_max
-// mondayaymin = forecastApi8.list[8].main.temp_min
-  
+// Tuesday api info  
 //info sent to html
 tempmonday.innerText = "Temp " +forecastApi8.list[8].main.temp + " " + "°F" 
 maxmonday.innerText = "Max Temp " + forecastApi8.list[8].main.temp_max + " " + "°F"
 minmonday.innerText = "Min Temp " + forecastApi8.list[8].main.temp_min + " " + "°F"
 
-
-
 // Tuesday api info
-// tuesdayweather = forecastApi8.list[16].main.temp
-// tuesdaymax = forecastApi8.list[16].main.temp_max
-// tuesdaymin = forecastApi8.list[16].main.temp_min
-
 //info sent to html
 temptuesday.innerText = "Temp " +forecastApi8.list[16].main.temp + " " + "°F" 
 maxtuesday.innerText = "Max Temp " + forecastApi8.list[16].main.temp_max + " " + "°F"
 mintuesday.innerText = "Min Temp " + forecastApi8.list[16].main.temp_min + " " + "°F"
 
 // wednesday list
-// wednesdayweather = forecastApi8.list[24].main.temp
-// wednesdaymax = forecastApi8.list[24].main.temp_max
-// wednesdaymin = forecastApi8.list[24].main.temp_min
-
 //info sent to html
 tempwednesday.innerText = "Temp " +forecastApi8.list[24].main.temp + " " + "°F"
 maxwednesday.innerText = "Max Temp " + forecastApi8.list[24].main.temp_max + " " + "°F"
@@ -244,22 +201,12 @@ minwednesday.innerText = "Min Temp " + forecastApi8.list[24].main.temp_min + " "
 
  
 // thursday list
-// thursdayweather = forecastApi8.list[32].main.temp
-// thursdaymax = forecastApi8.list[32].main.temp_max
-// thursdaymin = forecastApi8.list[32].main.temp_min
-
 //info sent to html
 tempthursday.innerText = "Temp " +forecastApi8.list[32].main.temp + " " + "°F"
 maxthursday.innerText = "Max Temp " + forecastApi8.list[32].main.temp_max + " " + "°F"
 minthursday.innerText = "Min Temp " + forecastApi8.list[32].main.temp_min + " " + "°F"
 
-
-  
 // Friday
-// fridayweather = forecastApi8.list[0].main.temp
-// fridaymax = forecastApi8.list[0].main.temp_max
-// fridaymin = forecastApi8.list[0].main.temp_min
-
 //info sent to html
 tempfriday.innerText = "Temp " +forecastApi8.list[0].main.temp + " " + "°F"
 maxfriday.innerText = "Max Temp " + forecastApi8.list[0].main.temp_max + " " + "°F"
@@ -269,10 +216,6 @@ minfriday.innerText = "Min Temp " + forecastApi8.list[0].main.temp_min + " " + "
 citynamebtn = forecastApi8.city.name
 //sending the name of the city from the button to the html
 currentcity.innerText = citynamebtn
-
-
-
-
 }
 
 
