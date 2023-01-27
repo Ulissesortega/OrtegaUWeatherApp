@@ -9,13 +9,13 @@ body{
 }
 
 .mainTitleFormat{
-    font-family: ;
+    
     color: #4744CF;
     background-color: #F1F5DE;
 }
 
 .dntTF{
-    font-family: ;
+    
     color: white;
     font-size: 40px;
 }
@@ -75,4 +75,9 @@ body{
 .borderbtn{
     border-radius: 15px;
     
+}
+
+.outline{
+	color: blue; 
+	font-size: 40px;    
 }
