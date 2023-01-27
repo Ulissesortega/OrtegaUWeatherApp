@@ -59,7 +59,7 @@ let minfriday = document.getElementById("minfriday")
 // Text Format
 tempfriday.className = "temp"
 maxfriday.className = "max"
-minfriday.className = "min"
+minfriday.className = "min "
 
 Btn1.addEventListener("click", function(){
   AsyncGetData1(cityInput.value)
