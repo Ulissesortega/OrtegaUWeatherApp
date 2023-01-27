@@ -145,7 +145,7 @@ async function AsyncGetData3(latitude, longitude){
 
 // Initial City Forecast ===================================================================
 async function AsyncGetData4(latitude, longitude){
-  const promise = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=8e02b0db85b4a729b31b20a4e496b448&units=imperial`)
+  const promise = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial${apiKey}`)
   const data = await promise.json();
   weatherApi4 = data
   console.log(weatherApi4);
@@ -224,7 +224,7 @@ async function AsyncGetData(currentcityname){
 //City Today Weather from the textbox
 
 async function AsyncGetData1(city){
-  const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8e02b0db85b4a729b31b20a4e496b448&units=imperial`)
+  const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial${apiKey}`)
   const data = await promise.json();
   forecastApi = data  
 }
