@@ -1,3 +1,14 @@
+// import { prod, dev } from "./environment.js";
+
+// let apiKey = '8e02b0db85b4a729b31b20a4e496b44';
+
+// if(prod.isLive == true)
+// {
+//     apiKey += prod.apiKey;
+// }else{
+//     apiKey += dev.apiKey;
+// }
+
 // html IDs ========================================================================
 
 let cityInput = document.getElementById("cityInput")
@@ -126,9 +137,10 @@ async function AsyncGetData4(latitude, longitude){
   mondaymax = weatherApi4.list[8].main.temp_max
   mondaymin = weatherApi4.list[8].main.temp_min
   
-  tempmonday.innerText = "Temp " + weatherApi4.list[8].main.temp  
-  maxmonday.innerText = "Max Temp" + weatherApi4.list[8].main.temp_max
-  minmonday.innerText = "Min Temp " + weatherApi4.list[8].main.temp_min
+  //info sent to html
+  tempmonday.innerText = "Temp " + weatherApi4.list[8].main.temp + " " + "°F"
+  maxmonday.innerText = "Max Temp " + weatherApi4.list[8].main.temp_max + " " + "°F"
+  minmonday.innerText = "Min Temp " + weatherApi4.list[8].main.temp_min + " " + "°F"
 
 
   // Tuesday api info
@@ -137,9 +149,9 @@ async function AsyncGetData4(latitude, longitude){
   tuesdaymin = weatherApi4.list[16].main.temp_min
   
   //info sent to html
-  temptuesday.innerText = weatherApi4.list[16].main.temp 
-  maxtuesday.innerText = weatherApi4.list[16].main.temp_max
-  mintuesday.innerText = weatherApi4.list[16].main.temp_min
+  temptuesday.innerText = "Temp " +weatherApi4.list[16].main.temp + " " + "°F"
+  maxtuesday.innerText = "Max Temp " + weatherApi4.list[16].main.temp_max + " " + "°F"
+  mintuesday.innerText = "Min Temp " + weatherApi4.list[16].main.temp_min + " " + "°F"
   
   
     // wednesday list
@@ -148,9 +160,9 @@ async function AsyncGetData4(latitude, longitude){
   wednesdaymin = weatherApi4.list[24].main.temp_min
   
   //info sent to html
-  tempwednesday.innerText = weatherApi4.list[24].main.temp
-  maxwednesday.innerText = weatherApi4.list[24].main.temp_max
-  minwednesday.innerText = weatherApi4.list[24].main.temp_min
+  tempwednesday.innerText = "Temp " +weatherApi4.list[24].main.temp + " " + "°F"
+  maxwednesday.innerText = "Max Temp " + weatherApi4.list[24].main.temp_max + " " + "°F"
+  minwednesday.innerText = "Min Temp " + weatherApi4.list[24].main.temp_min + " " + "°F"
 
    
   // thursday list
@@ -159,9 +171,9 @@ async function AsyncGetData4(latitude, longitude){
   thursdaymin = weatherApi4.list[32].main.temp_min
   
   //info sent to html
-  tempthursday.innerText = weatherApi4.list[32].main.temp
-  maxthursday.innerText = weatherApi4.list[32].main.temp_max
-  minthursday.innerText = weatherApi4.list[32].main.temp_min
+  tempthursday.innerText = "Temp " +weatherApi4.list[32].main.temp + " " + "°F"
+  maxthursday.innerText = "Max Temp " + weatherApi4.list[32].main.temp_max + " " + "°F"
+  minthursday.innerText = "Min Temp " + weatherApi4.list[32].main.temp_min + " " + "°F"
 
 
     
@@ -171,9 +183,9 @@ async function AsyncGetData4(latitude, longitude){
   fridaymin = weatherApi4.list[0].main.temp_min
 
   //info sent to html
-  tempfriday.innerText = weatherApi4.list[0].main.temp
-  maxfriday.innerText = weatherApi4.list[0].main.temp_max
-  minfriday.innerText = weatherApi4.list[0].main.temp_min
+  tempfriday.innerText = "Temp " +weatherApi4.list[0].main.temp + " " + "°F"
+  maxfriday.innerText = "Max Temp " + weatherApi4.list[0].main.temp_max + " " + "°F"
+  minfriday.innerText = "Min Temp " + weatherApi4.list[0].main.temp_min + " " + "°F"
   
   
 
@@ -212,14 +224,14 @@ async function AsyncGetData5(city){
   console.log(forecastApi8);
 
 
-mondayweather = forecastApi8.list[16].main.temp
-mondaydaymax = forecastApi8.list[16].main.temp_max
-mondayaymin = forecastApi8.list[16].main.temp_min
+mondayweather = forecastApi8.list[8].main.temp
+mondaydaymax = forecastApi8.list[8].main.temp_max
+mondayaymin = forecastApi8.list[8].main.temp_min
   
 //info sent to html
-temptuesday.innerText = forecastApi8.list[16].main.temp 
-maxtuesday.innerText = forecastApi8.list[16].main.temp_max
-mintuesday.innerText = forecastApi8.list[16].main.temp_min
+tempmonday.innerText = "Temp " +forecastApi8.list[8].main.temp + " " + "°F" 
+maxmonday.innerText = "Max Temp " + forecastApi8.list[8].main.temp_max + " " + "°F"
+minmonday.innerText = "Min Temp " + forecastApi8.list[8].main.temp_min + " " + "°F"
 
 
 
@@ -229,9 +241,9 @@ tuesdaymax = forecastApi8.list[16].main.temp_max
 tuesdaymin = forecastApi8.list[16].main.temp_min
 
 //info sent to html
-temptuesday.innerText = forecastApi8.list[16].main.temp 
-maxtuesday.innerText = forecastApi8.list[16].main.temp_max
-mintuesday.innerText = forecastApi8.list[16].main.temp_min
+temptuesday.innerText = "Temp " +forecastApi8.list[16].main.temp + " " + "°F" 
+maxtuesday.innerText = "Max Temp " + forecastApi8.list[16].main.temp_max + " " + "°F"
+mintuesday.innerText = "Min Temp " + forecastApi8.list[16].main.temp_min + " " + "°F"
 
 // wednesday list
 wednesdayweather = forecastApi8.list[24].main.temp
@@ -239,9 +251,9 @@ wednesdaymax = forecastApi8.list[24].main.temp_max
 wednesdaymin = forecastApi8.list[24].main.temp_min
 
 //info sent to html
-tempwednesday.innerText = forecastApi8.list[24].main.temp
-maxwednesday.innerText = forecastApi8.list[24].main.temp_max
-minwednesday.innerText = forecastApi8.list[24].main.temp_min
+tempwednesday.innerText = "Temp " +forecastApi8.list[24].main.temp + " " + "°F"
+maxwednesday.innerText = "Max Temp " + forecastApi8.list[24].main.temp_max + " " + "°F"
+minwednesday.innerText = "Min Temp " + forecastApi8.list[24].main.temp_min + " " + "°F"
 
  
 // thursday list
@@ -250,9 +262,9 @@ thursdaymax = forecastApi8.list[32].main.temp_max
 thursdaymin = forecastApi8.list[32].main.temp_min
 
 //info sent to html
-tempthursday.innerText = forecastApi8.list[32].main.temp
-maxthursday.innerText = forecastApi8.list[32].main.temp_max
-minthursday.innerText = forecastApi8.list[32].main.temp_min
+tempthursday.innerText = "Temp " +forecastApi8.list[32].main.temp + " " + "°F"
+maxthursday.innerText = "Max Temp " + forecastApi8.list[32].main.temp_max + " " + "°F"
+minthursday.innerText = "Min Temp " + forecastApi8.list[32].main.temp_min + " " + "°F"
 
 
   
@@ -262,9 +274,9 @@ fridaymax = forecastApi8.list[0].main.temp_max
 fridaymin = forecastApi8.list[0].main.temp_min
 
 //info sent to html
-tempfriday.innerText = forecastApi8.list[0].main.temp
-maxfriday.innerText = forecastApi8.list[0].main.temp_max
-minfriday.innerText = forecastApi8.list[0].main.temp_min
+tempfriday.innerText = "Temp " +forecastApi8.list[0].main.temp + " " + "°F"
+maxfriday.innerText = "Max Temp " + forecastApi8.list[0].main.temp_max + " " + "°F"
+minfriday.innerText = "Min Temp " + forecastApi8.list[0].main.temp_min + " " + "°F"
 
 //getting the city name from the button
 citynamebtn = forecastApi8.city.name
