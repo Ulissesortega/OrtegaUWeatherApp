@@ -6,9 +6,9 @@ let currentcity = document.getElementById("currentcity")
 
 
 //Monday
-let temp = document.getElementById("temp")
-let max = document.getElementById("max")
-let min = document.getElementById("min")
+let mondaytemp = document.getElementById("tempmonday")
+let mondaymax = document.getElementById("maxmonday")
+let mondaymin = document.getElementById("minmonday")
 
 //Tuesday
 let temptuesday = document.getElementById("temptuesday")
@@ -101,18 +101,15 @@ async function AsyncGetData3(latitude, longitude){
   const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=8e02b0db85b4a729b31b20a4e496b448&units=imperial`)
   const data = await promise.json();
   weatherApi3 = data
-
-  
-
   initiallocation = weatherApi3.name
   currentweather = weatherApi3.main.feels_like
   currentmax = weatherApi3.main.temp_max
   currentmin = weatherApi3.main.temp_min
   currentcityname = weatherApi3.name
 
-  temp.innerText = "Current " + currentweather
-  max.innerText = "Max " + currentmax
-  min.innerText = "Min " + currentmin  
+  
+  
+  
   currentcity.innerText = currentcityname
   
 }
@@ -129,8 +126,9 @@ async function AsyncGetData4(latitude, longitude){
   mondaymax = weatherApi4.list[8].main.temp_max
   mondaymin = weatherApi4.list[8].main.temp_min
   
-  
-  console.log("monday " + mondaymin);
+  tempmonday.innerText = "Temp " + weatherApi4.list[8].main.temp  
+  maxmonday.innerText = "Max Temp" + weatherApi4.list[8].main.temp_max
+  minmonday.innerText = "Min Temp " + weatherApi4.list[8].main.temp_min
 
 
   // Tuesday api info
